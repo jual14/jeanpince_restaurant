@@ -1,0 +1,163 @@
+/*$screen-sm: 800px !default;
+$brand-danger: #cc0000 !default;	
+
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap.scss";*/
+
+@import "compass";
+
+@import "variables";
+@import "default";
+
+@import "fonts";
+
+@import "retina";
+
+
+html {
+	font-size:62.5%;
+}
+
+body {
+	/*font-family: lato, sans-serif;
+	font-weight: 400;
+	font-size: $font-size-default;
+	color: $color-grey-38;
+	background: #fff;*/
+	
+	/* WebKit browsers. */
+	-webkit-font-smoothing: antialiased;
+	
+	/* Safari and Chrome. */
+	text-rendering: optimizeLegibility;
+	
+	/* Firefox. */
+	-moz-osx-font-smoothing: grayscale;
+	
+	/* IE. */
+	font-feature-settings: 'liga';
+}
+
+a,
+a:hover {
+	color: $color-blue !important;
+	text-decoration: none;
+}
+
+/* header */
+
+.header {
+	height: $header-height;
+	position: absolute;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+    width: 100%;
+}
+
+.nav {
+	float: right;
+	margin: 20px 20px;
+
+	li {
+		display: inline-block;
+		
+		a:focus, a:hover, a:active {
+    		text-decoration: underline;
+    		background-color: inherit;
+		}	
+	}
+}
+
+.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 22px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: inherit;
+    background-image: none;
+    border: 1px solid inherit;
+    border-radius: 4px;
+	
+	.icon-bar {
+	    background-color: $color-blue !important;
+	    display: block;
+	    width: 30px !important;
+	    height: 2px;
+	    border-radius: 1px;
+	}
+
+	.icon-bar+.icon-bar {
+    	margin-top: 8px;
+	}
+}
+
+.navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.navbar-toggle .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+}
+
+.navbar-collapse.in {
+    overflow-y: auto;
+    background-color: rgba(255,255,255,0.7);
+}
+
+/* index */
+
+#video-fond {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#video-fond > video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* whithout object-fit */
+@media (min-aspect-ratio: 16/9) {
+  #video-fond > video {
+    height: 300%;
+    top: -100%;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  #video-fond > video {
+    width: 300%;
+    left: -100%;
+  }
+}
+/* If object-fit is supported, erase last rules */
+@supports (object-fit: cover) {
+  #video-fond > video {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+}
+
+/* Footer */
+
+.footer {
+	height: $footer-height;
+	position: absolute;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+}
+
